@@ -1,0 +1,1 @@
+C# using static directive helps us to access static members (methods and fields) of the class without using the class name. If we don?t use static directive, we need to use class name to call static members each time. It allows us to import static members of a class into the source file.

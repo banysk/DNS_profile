@@ -1,0 +1,54 @@
+var obj = {
+    a: 5,
+    f: function() {
+        return this.a;
+    },
+    l: () => this.a
+}
+
+>obj.a;
+<5
+
+>obj.f()
+<5
+-----
+>obj.l()
+<undefined
+
+function obj() {
+    let a = 5;
+
+    function f() {
+        return a;
+    }
+
+    let l = () => a; 
+
+    return [f, l];
+}
+
+>obj()[0]()
+<5
+
+>obj()[1]()
+<5
+-----
+class obj {
+    constructor() {
+        this.a = 5;
+
+        this.f = function() {
+            return this.a;
+        }
+
+        this.l = () => this.a;
+    }
+}
+
+>var o = new obj()
+
+>o.f()
+<5
+
+>o.l()
+<5
